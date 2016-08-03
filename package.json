@@ -1,0 +1,22 @@
+{
+  "name": "vue-selector",
+  "version": "0.0.1",
+  "description": "A component selector for Vue",
+  "main": "dist/vue-selector.js",
+  "scripts": {
+    "prepublish": "node_modules/.bin/rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zhang Visper",
+  "license": "MIT",
+  "dependencies": {
+    "array-unique": "^0.3.2",
+    "css-selector-parser": "^1.1.0"
+  },
+  "devDependencies": {
+    "rollup": "^0.34.3",
+    "rollup-plugin-commonjs": "^3.3.1",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "vue": "^1.0.26"
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="http://cdn.bootcss.com/vue/1.0.26/vue.js"></script>
+    <script src="dist/vue-selector.js"></script>
+    <script type="text/javascript">
+      Vue.devtools = Vue.debug = true
+      Vue.use(VueSelector)
+    </script>
+  </head>
+  <body>
+    <com-a></com-a>
+  </body>
+  <script type="text/javascript">
+    var ComD = Vue.extend({
+      name: 'ComD',
+      template: '<div></div>'
+    })
+
+    var ComC = Vue.extend({
+      name: 'ComC',
+      template: '<com-d></com-d>',
+      components: { ComD: ComD }
+    })
+
+    var ComB = Vue.extend({
+      name: 'ComB',
+      template: '<div></div>'
+    })
+
+    var ComA = Vue.extend({
+      name: 'ComA',
+      template: '<com-b></com-b><com-c></com-c><com-b></com-b>',
+      components: { ComB: ComB, ComC: ComC }
+    })
+
+    var root = new Vue({
+      el: 'body',
+      components: { ComA: ComA }
+    })
+  </script>
+</html>
