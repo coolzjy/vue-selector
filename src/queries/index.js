@@ -14,25 +14,6 @@ var csp = new CSP.CssSelectorParser()
 csp.registerNestingOperators('>', '+');
 
 /**
- * Converts hyphen/underscore/slash delimitered names into
- * camelized classNames.
- *
- * e.g. my-component => MyComponent
- *      some_else    => SomeElse
- *      some/comp    => SomeComp
- *
- * @param {String} str
- * @return {String}
- */
-var classifyRE = /(?:^|[-_\/])(\w)/g
-function classify (str) {
-  return str.replace(classifyRE, toUpper)
-}
-function toUpper (_, c) {
-  return c ? c.toUpperCase() : ''
-}
-
-/**
  * Handle css rule object
  *
  * @param {Object} rule
@@ -40,7 +21,7 @@ function toUpper (_, c) {
  * @return {Array}
  */
 function handleRule (rule, components) {
-  var tagName = classify(rule.tagName)
+  var tagName = Vue.util.classify(rule.tagName)
   var result = []
 
   var query = nestQuery[rule.nestingOperator] || defaultQuery
