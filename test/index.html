@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+  </head>
+  <body>
+    <div id="mocha"></div>
+
+    <!-- vue -->
+    <script src="http://cdn.bootcss.com/vue/1.0.26/vue.js"></script>
+    <script src="../dist/vue-selector.js"></script>
+    <script type="text/javascript">
+      Vue.devtools = Vue.debug = true
+      Vue.use(VueSelector)
+    </script>
+    <div id="app">
+      <com-a></com-a>
+      <com-b></com-b>
+    </div>
+
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script>
+      initMochaPhantomJS()
+      mocha.setup('tdd');
+    </script>
+    <script src="tests.js"></script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>

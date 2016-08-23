@@ -3,20 +3,30 @@
   "version": "0.0.1",
   "description": "A component selector for Vue",
   "main": "dist/vue-selector.js",
+  "files": ["src", "dist"],
   "scripts": {
-    "prepublish": "node_modules/.bin/rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "rollup -c",
+    "test": "mocha-phantomjs test/index.html"
   },
   "author": "Zhang Visper",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coolzjy/vue-selector.git"
+  },
   "license": "MIT",
   "dependencies": {
     "array-unique": "^0.3.2",
     "css-selector-parser": "^1.1.0"
   },
+  "peerDependencies": {
+    "vue": "^1.0.26"
+  },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
+    "mocha-phantomjs": "^4.1.0",
     "rollup": "^0.34.3",
     "rollup-plugin-commonjs": "^3.3.1",
-    "rollup-plugin-node-resolve": "^2.0.0",
-    "vue": "^1.0.26"
+    "rollup-plugin-node-resolve": "^2.0.0"
   }
 }
